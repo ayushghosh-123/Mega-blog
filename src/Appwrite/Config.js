@@ -99,8 +99,37 @@ export class service{
     }
 
     // file upload service
+
+    async uploadFile(file){
+        try {
+            return await this.bucket.createFile(
+                conf.appwriteBucketID,
+                ID.unique(),
+                file
+            )
+        } catch (error) {
+            console.log("Appwrie service :: uploadFile :: error", error)
+            return false
+        }
+    }
     
-    
+    async deleteFile(fileId){
+        try {
+            return  await  this.bucket.deleteFile(
+                conf.appwriteBucketID,
+                fileId
+            )
+        } catch (error) {
+            console.log("Appwrite the error are happen:: error ", error)
+        }
+    }
+
+    getfilePreview(fileId){
+        return this.bucket.getFilePreview(
+            conf.appwriteBucketID,
+            fileId
+        )
+    }
 }
 
 const Service = new service()
