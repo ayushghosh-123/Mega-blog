@@ -17,8 +17,8 @@ function AllPost() {
         <Container>
            <div className='flex flex-wrap'>
            {post.map((post)=>(
-                <div className=''>
-                    
+                <div className='p-2 w-1/4'>
+                    <Postcard post={post}/>                    
                  </div>
             ))}
            </div>

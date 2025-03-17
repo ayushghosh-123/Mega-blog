@@ -10,6 +10,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import Post from "./Post-form/Post"
 import Postcard from "./Postcard";
+import AuthLayout from "./AuthLayoutr";
 
 export{
     Header,
@@ -23,5 +24,6 @@ export{
     Signup,
     Login,
     Post,
-    Postcard
+    Postcard,
+    AuthLayout
 }
