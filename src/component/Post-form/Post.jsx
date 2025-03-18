@@ -6,7 +6,7 @@ import Select from "../Select"
 import Input from "../Input";
 import Service from "../../Appwrite/Config";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {useSelector } from "react-redux";
 
 export default function Post({ post }) {
   const { register, handleSubmit, watch, setValue, control, getValues } = useForm({

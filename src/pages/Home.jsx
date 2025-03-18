@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Service from "../Appwrite/Config";
 import Container from "../Container/Container";
-import Post from "../component/Post-form/Post";
+import Postcard from "../component/Postcard";
 
 function Home() {
   const [posts, setPost] = useState([]);
@@ -35,7 +35,7 @@ function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {posts.map((post) => (
             <div key={post.$id} className="p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition duration-300">
-              <Post {...post} />
+              <Postcard {...post} />
             </div>
           ))}
         </div>
