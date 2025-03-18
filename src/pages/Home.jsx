@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Service from "../Appwrite/Config";
-import { Post, Container } from "../component";
+import Container from "../Container/Container";
+import Post from "../component/Post-form/Post";
 
 function Home() {
   const [posts, setPost] = useState([]);
@@ -16,14 +17,12 @@ function Home() {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full py-8 mt-4 text-center">
+      <div className="w-full py-12 mt-6 text-center ">
         <Container>
-          <div className="flex flex-wrap">
-            <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-500">
-                Login to read posts
-              </h1>
-            </div>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-3xl font-bold text-gray-700 hover:text-gray-900 transition duration-300">
+              Login to read posts
+            </h1>
           </div>
         </Container>
       </div>
@@ -31,18 +30,18 @@ function Home() {
   }
 
   return (
-    <div className='w-full py-8'>
-        <Container>
-            <div className='flex flex-wrap'>
-                {posts.map((post) => (
-                    <div key={post.$id} className='p-2 w-1/4'>
-                        <PostCard {...post} />
-                    </div>
-                ))}
+    <div className="w-full py-12 bg-gray-50">
+      <Container>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {posts.map((post) => (
+            <div key={post.$id} className="p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition duration-300">
+              <Post {...post} />
             </div>
-        </Container>
+          ))}
+        </div>
+      </Container>
     </div>
-)
+  );
 }
 
 export default Home;

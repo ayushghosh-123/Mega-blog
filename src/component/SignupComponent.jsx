@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin } from "../Store/autSlice";
-import { Input, Button, Logo } from "./index";
+import Input from './Input';
+import Button from './Button';
+import Logo from './Logo';
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import authservice from '../Appwrite/auth';
 
 
-function Signup() {
+function SignupComponenet() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
@@ -77,7 +79,7 @@ function Signup() {
                         {...register("password", {
                             required: true,})}
                         />
-                        <Button type="submit" className="w-full">
+                        <Button type="submit" className="w-full bg-amber-600">
                             Create Account
                         </Button>
                     </div>
@@ -88,4 +90,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default SignupComponenet

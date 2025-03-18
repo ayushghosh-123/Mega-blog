@@ -12,8 +12,7 @@ import Post from "./Post-form/Post"
 import Postcard from "./Postcard";
 import AuthLayout from "./AuthLayoutr";
 
-export{
-    Header,
+export default {
     Footer,
     Container,
     Logo,
